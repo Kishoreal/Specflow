@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0906D17A-01F0-4761-9ECD-BE5023387943}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookShop.AcceptanceTests</RootNamespace>
+    <AssemblyName>BookShop.AcceptanceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecRun.SpecFlowPlugin">
+      <HintPath>..\packages\SpecRun.SpecFlow.1.2.0\lib\net35\SpecRun.SpecFlowPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="TechTalk.SpecRun">
+      <HintPath>..\packages\SpecRun.SpecFlow.1.2.0\lib\net35\TechTalk.SpecRun.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriver.2.31.2\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.31.2.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.2.31.2\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PrepareBookCatalog.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrepareBookCatalog.feature</DependentUpon>
+    </Compile>
+    <Compile Include="StepDefinitions\HomeSteps.cs" />
+    <Compile Include="StepDefinitions\ShoppingCartSteps.cs" />
+    <Compile Include="Support\CatalogContext.cs" />
+    <Compile Include="Support\HttpContextStub.cs" />
+    <Compile Include="Support\ReferenceBookList.cs" />
+    <Compile Include="US02_HomeScreen.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>US02_HomeScreen.feature</DependentUpon>
+    </Compile>
+    <Compile Include="US03_ShopingCart.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>US03_ShopingCart.feature</DependentUpon>
+    </Compile>
+    <Compile Include="StepDefinitions\BookSteps.cs" />
+    <Compile Include="StepDefinitions\SearchSteps.cs" />
+    <Compile Include="Support\ActionResultExtensions.cs" />
+    <Compile Include="Support\DatabaseTools.cs" />
+    <Compile Include="US01_BookSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>US01_BookSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="US04_BookDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>US04_BookDetails.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.srprofile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PrepareBookCatalog.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PrepareBookCatalog.feature.cs</LastGenOutput>
+    </None>
+    <None Include="runtests.cmd" />
+    <None Include="SpecRunTestProfile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="US02_HomeScreen.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>US02_HomeScreen.feature.cs</LastGenOutput>
+    </None>
+    <None Include="US03_ShopingCart.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>US03_ShopingCart.feature.cs</LastGenOutput>
+    </None>
+    <None Include="US01_BookSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>US01_BookSearch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="US04_BookDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>US04_BookDetails.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookShop.AcceptanceTests.Common\BookShop.AcceptanceTests.Common.csproj">
+      <Project>{FDC3F86D-A2E8-443F-8665-6A71DA702123}</Project>
+      <Name>BookShop.AcceptanceTests.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookShop.WebTests.Selenium\BookShop.WebTests.Selenium.csproj">
+      <Project>{076B2B3F-B40C-4445-B73B-8847C15E9623}</Project>
+      <Name>BookShop.WebTests.Selenium</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookshop\BookShop.csproj">
+      <Project>{B75CFB7F-0D21-4C39-8550-F1C7BDEEDC50}</Project>
+      <Name>BookShop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
