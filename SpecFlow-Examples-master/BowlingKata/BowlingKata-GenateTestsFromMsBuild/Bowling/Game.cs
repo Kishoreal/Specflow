@@ -5,6 +5,7 @@
         private int[] rolls = new int[21];
         private int currentRoll;
 
+        //Test Sub Modules
         public void Roll(int pins)
         {
             rolls[currentRoll++] = pins;
